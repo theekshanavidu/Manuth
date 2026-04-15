@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Link Extractor Manuth</title>
+    <meta name="description" content="Extract YouTube short links from long embedded URLs with history saving.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-anim"></div>
+    <main class="container">
+        <header>
+            <h1><i class="fab fa-youtube gradient-text"></i> Yt Embedded Link Extractor</h1>
+            <p>Convert embedded URLs into short links.</p>
+        </header>
+
+        <section class="converter-section glass-panel">
+            <div class="input-group">
+                <input type="url" id="urlInput" placeholder="Paste your long YouTube link here..." autocomplete="off">
+                <button id="convertBtn" class="btn primary-btn"><i class="fas fa-magic"></i> Extract</button>
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <p class="label">Extracted Short Link:</p>
+                <div class="result-group">
+                    <input type="text" id="shortLink" readonly>
+                    <button id="copyBtn" class="btn secondary-btn" title="Copy to Clipboard"><i class="fas fa-copy"></i>
+                        Copy</button>
+                    <button id="openBtn" class="btn secondary-btn" title="Open in New Tab"><i
+                            class="fas fa-external-link-alt"></i> Open</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section glass-panel">
+            <div class="history-header">
+                <h2><i class="fas fa-history"></i> Convert History</h2>
+                <button id="clearHistoryBtn" class="btn icon-btn" title="Clear History"><i
+                        class="fas fa-trash-alt"></i></button>
+            </div>
+            <div class="history-filters">
+                <input type="month" id="monthFilter" class="month-filter" title="Filter by Month">
+            </div>
+            <ul id="historyList" class="history-list">
+                <!-- History items will be populated here -->
+            </ul>
+        </section>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
